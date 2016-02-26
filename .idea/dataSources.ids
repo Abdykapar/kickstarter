@@ -21,7 +21,7 @@
       <exported-key name="donations_backer_id_foreign" table="donations" schema="" catalog="kickstarter" columns="backer_id"/>
       <index name="backers_user_id_foreign" unique="false" columns="user_id"/>
     </table>
-    <table name="categorys" schema="" catalog="kickstarter" type="TABLE">
+    <table name="categories" schema="" catalog="kickstarter" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
@@ -85,7 +85,7 @@
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="projects_category_id_foreign" columns="category_id" ref-table="categorys" ref-schema="" ref-catalog="kickstarter" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="projects_category_id_foreign" columns="category_id" ref-table="categories" ref-schema="" ref-catalog="kickstarter" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="projects_creator_id_foreign" columns="creator_id" ref-table="creators" ref-schema="" ref-catalog="kickstarter" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="projects_category_id_foreign" unique="false" columns="category_id"/>
       <index name="projects_creator_id_foreign" unique="false" columns="creator_id"/>

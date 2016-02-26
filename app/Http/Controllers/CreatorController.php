@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Creator;
 use App\Project;
 use App\User;
@@ -34,5 +35,15 @@ class CreatorController extends Controller
     }
     public function profile(){
         return view('user/index');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function project(){
+        $proj = Project::find(7);
+        //dd($proj);
+        $p = $proj->category()->get();
+        return $p;
     }
 }

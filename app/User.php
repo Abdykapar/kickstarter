@@ -27,4 +27,12 @@ class User extends Authenticatable
     public function creator(){
         return $this->hasMany('App\Creator');
     }
+
+    public function comment(){
+        return $this->hasMany('App\Comment');
+    }
+
+    public function backer(){
+        return $this->hasMany('App\Backer');
+    }
 }

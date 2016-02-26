@@ -36,5 +36,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('create','CreatorController@pcreate');
     Route::get('profile','CreatorController@profile');
     Route::get('projects','CreatorController@project');
+    Route::get('admin','AdminController@index');
 
 });

@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Creator extends Model
 {
     //
+    protected $fillable = ['country','postcode','user_id','home_address'];
+
+
     public function user(){
-        return $this->hasMany('App/User');
+        return $this->belongsTo('App\User');
     }
 }

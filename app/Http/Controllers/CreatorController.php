@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Creator;
+use App\Project;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,24 @@ class CreatorController extends Controller
 {
     public function creator(){
         $member = Auth::user();
-        $user = Creator::all();
+        $user = User::find(2);
+        //dd($user->name);
+        //dd($name);
+        $creator = new Creator('country','Turkey');
+
+        $user->creator()->save($creator);
         return view('welcome',compact('user','member'));
+    }
+
+    public function create(){
+        return view('user/create');
+    }
+
+    public function pcreate(Request $request){
+        $project = Project::create($request->all());
+        return view('user/show',compact('project'));
+    }
+    public function profile(){
+        return view('user/index');
     }
 }

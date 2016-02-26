@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
 
     /**
@@ -25,6 +25,6 @@ class User extends Authenticatable
     ];
 
     public function creator(){
-        return $this->belongsTo('App/Creator');
+        return $this->hasMany('App\Creator');
     }
 }
